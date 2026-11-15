@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!-- 이 문서는 브라우저에게 "이건 HTML5 문서야" 라고 알려주는 선언이에요. -->
+<html lang="ko">
+<head>
+  <!-- 한글이 깨지지 않도록 문자 인코딩을 알려줘요. -->
+  <meta charset="UTF-8" />
+  <!-- 휴대폰처럼 작은 화면에서도 화면 크기에 맞게 보이도록 해요. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>서준의 첫 웹사이트</title>
+  <!-- style.css 파일을 연결해요. 디자인(색, 글꼴, 배치)은 전부 이 파일에 있어요. -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== 위쪽 메뉴 바 ===== -->
+  <header class="topbar">
+    <a class="logo" href="#top">서준<span>.dev</span></a>
+
+    <nav class="menu">
+      <a href="#about">소개</a>
+      <a href="#practice">연습</a>
+      <a href="#play">놀이터</a>
+    </nav>
+
+    <!-- 누르면 다크 모드와 라이트 모드가 바뀌는 버튼이에요. -->
+    <button id="theme-btn" class="theme-btn" type="button">🌙 다크</button>
+  </header>
+
+  <main id="top">
+
+    <!-- ===== 첫 화면 ===== -->
+    <section class="hero">
+      <p class="badge">첫 번째 GitHub 웹사이트</p>
+
+      <h1>
+        안녕하세요,<br />
+        저는 <span class="accent">서준</span>입니다 👋
+      </h1>
+
+      <p class="lead">
+        HTML, CSS, JavaScript를 배우면서 만든 첫 웹사이트예요.
+        코드는 GitHub에 그대로 공개되어 있어서 누구나 볼 수 있어요.
+      </p>
+
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="#practice">무엇을 배웠나요?</a>
+        <a class="btn btn-ghost" href="https://github.com/hiimkoreanpeople" target="_blank" rel="noopener">GitHub 보기</a>
+      </div>
+    </section>
+
+    <!-- ===== 소개 ===== -->
+    <section id="about" class="section">
+      <h2>소개</h2>
+      <p class="section-desc">세 가지 언어로 웹사이트를 만들었어요. 각각 하는 일이 달라요.</p>
+
+      <div class="cards">
+        <article class="card">
+          <div class="card-icon html">HTML</div>
+          <h3>구조</h3>
+          <p>제목, 문단, 버튼 같은 <strong>내용의 뼈대</strong>를 만듭니다. 집으로 치면 벽과 방이에요.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon css">CSS</div>
+          <h3>디자인</h3>
+          <p>색, 글꼴, 간격, 움직임을 정합니다. <strong>보기 좋게 꾸미는</strong> 역할이에요.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon js">JS</div>
+          <h3>동작</h3>
+          <p>버튼을 눌렀을 때 무언가 일어나게 합니다. <strong>움직이는 부분</strong>을 담당해요.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== 연습 ===== -->
+    <section id="practice" class="section">
+      <h2>이 사이트에 들어간 것</h2>
+      <p class="section-desc">코드를 직접 열어 보면 아래 기능이 어떻게 만들어졌는지 볼 수 있어요.</p>
+
+      <ul class="checks">
+        <li>다크 모드 / 라이트 모드 전환 버튼</li>
+        <li>인사말을 바꾸는 버튼</li>
+        <li>클릭 횟수를 세는 카운터</li>
+        <li>휴대폰 화면에 맞춰 바뀌는 반응형 배치</li>
+        <li>스크롤할 때 부드럽게 나타나는 효과</li>
+      </ul>
+    </section>
+
+    <!-- ===== 놀이터 (JavaScript가 동작하는 곳) ===== -->
+    <section id="play" class="section">
+      <h2>놀이터</h2>
+      <p class="section-desc">버튼을 눌러 보세요. JavaScript가 실제로 일하고 있어요.</p>
+
+      <div class="playground">
+
+        <!-- 인사말 바꾸기 -->
+        <div class="panel">
+          <h3>인사말 바꾸기</h3>
+          <p id="greeting" class="greeting">안녕하세요, 서준입니다 👋</p>
+          <button id="greeting-btn" class="btn btn-primary" type="button">다른 인사말</button>
+        </div>
+
+        <!-- 클릭 카운터 -->
+        <div class="panel">
+          <h3>클릭 카운터</h3>
+          <p class="counter">
+            <span id="count">0</span><span class="counter-unit">번</span>
+          </p>
+          <div class="row">
+            <button id="count-btn" class="btn btn-primary" type="button">+1</button>
+            <button id="reset-btn" class="btn btn-ghost" type="button">초기화</button>
+          </div>
+          <p class="hint">숫자는 새로고침해도 기억돼요.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== 아래쪽 ===== -->
+  <footer class="footer">
+    <p>© 2026 서준 · <a href="https://github.com/hiimkoreanpeople" target="_blank" rel="noopener">@hiimkoreanpeople</a></p>
+    <p class="footer-small">GitHub Pages로 무료로 올린 첫 웹사이트</p>
+  </footer>
+
+  <!-- script.js 파일을 연결해요. body 맨 아래에 두면 화면이 먼저 그려져서 빨라요. -->
+  <script src="script.js"></script>
+</body>
+</html>
